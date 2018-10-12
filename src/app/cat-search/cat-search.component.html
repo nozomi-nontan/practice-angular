@@ -4,10 +4,10 @@
 
         <div class="siimple-form">
             <div class="siimple-form-field">
-                <input #searchBox id="search-box" (keyup)="search(searchBox.value)">
+                <input #searchBox id="search-box" (keyup)="search(searchBox.value)" (blur)="blur()">
 
                 <div class="siimple-list">
-                    <div class="siimple-list-item" *ngFor="let cat of cats$ | async">
+                    <div class="siimple-list-item" *ngFor="let cat of cats$ | async" >
                         <a routerLink="/detail/{{cat.id}}" class="siimple-link">{{cat.name}}ちゃん</a>
                     </div>
                 </div>

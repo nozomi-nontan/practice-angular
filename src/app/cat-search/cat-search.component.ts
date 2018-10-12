@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'
 
 import { Cat } from '../cat';
@@ -31,6 +31,10 @@ export class CatSearchComponent implements OnInit {
 
       switchMap((term: string) => this.catService.searchCat(term)),
     );
+  }
+
+  blur() {
+    this.searchTerms.next(' ');
   }
 
 }
