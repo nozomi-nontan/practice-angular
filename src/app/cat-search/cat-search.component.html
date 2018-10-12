@@ -1,0 +1,17 @@
+<div class="siimple-grid-row">
+    <div class="siimple-content--large">
+        <h2>ねこさま検索</h2>
+
+        <div class="siimple-form">
+            <div class="siimple-form-field">
+                <input #searchBox id="search-box" (keyup)="search(searchBox.value)">
+
+                <div class="siimple-list">
+                    <div class="siimple-list-item" *ngFor="let cat of cats$ | async">
+                        <a routerLink="/detail/{{cat.id}}" class="siimple-link">{{cat.name}}ちゃん</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

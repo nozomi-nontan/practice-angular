@@ -1,0 +1,19 @@
+<div *ngIf="messageService.messages.length">
+    <div class="siimple-grid-row">
+        <div class="siimple-content siimple-content--large">
+            <h2>Messages</h2>
+            <div class="siimple-list siimple-content siimple-content--medium">
+                <div class="siimple-form">
+                    <div class="siimple-form-field">
+                        <div class="siimple-btn siimple-btn--red" (click)="messageService.clear()">
+                            初期化
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let message of messageService.messages" class="siimple-list-item">
+                    {{message}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

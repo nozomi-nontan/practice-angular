@@ -1,0 +1,39 @@
+<!-- タブの出し分け -->
+<div class="siimple-grid">
+    <div class="siimple-navbar siimple-navbar--primary siimple-navbar--fluid">
+        <div class="siimple-navbar-title">
+            {{title}}
+        </div>
+        <div class="siimple-navbar-subtitle">
+            犬も好きです(&#180;・ω・`)
+        </div>
+    </div>
+
+    <div class="siimple-alert siimple-alert--warning">
+        <div class="siimple-close"></div>
+        やる気を出すためよそ様の猫様の画像をお借り中・・
+    </div>
+
+    <div class="siimple-tabs siimple-tabs--boxed">
+        <div class="siimple-tabs-item siimple-tabs-item--selected" *ngIf="setMenu()=='/cats'">
+            <div  class="siimple-navbar-item">
+                にゃんこたち！
+            </div>
+        </div>
+        <div class="siimple-tabs-item" *ngIf="setMenu()!='/cats'">
+            <a routerLink="/cats" class="siimple-navbar-item">にゃんこたち！</a>
+        </div>
+        <div class="siimple-tabs-item siimple-tabs-item--selected" *ngIf="setMenu()=='/dashboard'">
+            <div  class="siimple-navbar-item">
+                ダッシュボード
+            </div>
+        </div>
+        <div class="siimple-tabs-item" *ngIf="setMenu()!='/dashboard'">
+            <a routerLink="/dashboard" class="siimple-navbar-item">ダッシュボード</a>
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+    <app-messages></app-messages>
+</div>
+<div id="div"></div>

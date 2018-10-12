@@ -1,0 +1,16 @@
+.siimple-list-item {
+  width: 300px;
+}
+
+.siimple-list-item:hover {
+  opacity: 0.7;
+}
+
+.siimple-list-item a {
+  display: inline-block;
+  width: 100%;
+}
+
+#search-box {
+  width: 300px;
+}

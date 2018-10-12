@@ -1,0 +1,56 @@
+<div *ngIf="cat && cat.status != ''">
+    <div class="siimple-grid-row">
+
+        <div class="siimple-content siimple-content--large">
+            <h2>{{cat.name}}ちゃんの詳細</h2>
+            <div class="siimple-form">
+                <div class="siimpleform-field">
+                    <button (click)="goBack()" class="siimple-btn siimple-btn--grey">戻る</button>
+                </div>
+            </div>
+            <div class="siimple-form">
+                <div class="siimple-form-field">
+                    <label class="siimple-form-field-label">なまえ：<input [(ngModel)]="cat.name" placeholder="おなまえにゃん"></label>
+                </div>
+                <div class="siimple-form">
+                    <div class="siimple-form-field">
+                        <button (click)="save();" class="siimple-btn siimple-btn--success">更新</button>
+                    </div>
+                </div>
+            </div>
+            <div class="siimple-content siimple-content--small">
+                <div class="siimple-card siimple-grid-col siimple-grid-col siimple-grid-col--6 siimple-grid-col--xs-12 siimple-grid-col--sm-12 siimple-grid-col--md-6 center-block">
+                    <div class="siimple-card-body">
+                        <blockquote class="twitter-tweet" data-lang="ja">
+                            <p lang="ja" dir="ltr">{{cat.message}}<a href="https://t.co/{{cat.no}}">pic.twitter.com/{{cat.no}}</a> </p>
+                            <p>{{cat.user}}<a href="https://twitter.com/{{cat.userId}}/status/{{cat.status}}?ref_src=twsrc%5Etfw">{{cat.date}}</a></p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!cat || cat.status == ''">
+    <div class="siimple-grid-row">
+        <div class="siimple-content siimple-content--large">
+            <h2 *ngIf="cat">{{cat.name}}ちゃんの詳細</h2>
+            <div class="siimple-form">
+                <div class="siimpleform-field">
+                    <button (click)="goBack()" class="siimple-btn siimple-btn--grey">戻る</button>
+                </div>
+            </div>
+            <div class="siimple-content siimple-content--small">
+                <div class="siimple-card siimple-grid-col siimple-grid-col siimple-grid-col--6 siimple-grid-col--xs-12 siimple-grid-col--sm-12 siimple-grid-col--md-6 center-block">
+                    <div class="siimple-card-body noimage siimple--bg-light">
+                        <div class="text">
+                            noimage
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
