@@ -2,26 +2,28 @@
     <div class="siimple-content siimple-content--large">
         <h2>Cute Cats!!!!</h2>
 
-        <div class="siimple-table siimple-table--striped siimple-table--hover">
-            <div class="siimple-table-header">
-                <div class="siimple-table-row">
-                    <div class="siimple-table-cell">ID</div>
-                    <div class="siimple-table-cell">NAME</div>
-                    <div class="siimple-table-cell">詳細</div>
-                    <div class="siimple-table-cell">削除</div>
+        <div class="cats-list">
+            <div class="siimple-table siimple-table--striped siimple-table--hover">
+                <div class="siimple-table-header">
+                    <div class="siimple-table-row">
+                        <div class="siimple-table-cell">ID</div>
+                        <div class="siimple-table-cell">NAME</div>
+                        <div class="siimple-table-cell">詳細</div>
+                        <div class="siimple-table-cell">削除</div>
+                    </div>
                 </div>
-            </div>
-            <div class="siimple-table-body">
-                <div class="siimple-table-row" *ngFor="let cat of cats">
-                    <div class="siimple-table-cell">{{cat.id}}</div>
-                    <div class="siimple-table-cell">{{cat.name}}</div>
-                    <div class="siimple-table-cell">
-                        <a class="siimple-btn siimple-btn--primary" routerLink="/detail/{{cat.id}}">詳細</a>
+                <div class="siimple-table-body">
+                    <div class="siimple-table-row" *ngFor="let cat of cats">
+                        <div class="siimple-table-cell">{{cat.id}}</div>
+                        <div class="siimple-table-cell">{{cat.name}}</div>
+                        <div class="siimple-table-cell">
+                            <a class="siimple-btn siimple-btn--primary" routerLink="/detail/{{cat.id}}">詳細</a>
+                        </div>
+                        <div class="siimple-table-cell">
+                            <a class="siimple-btn siimple-btn--error" (click)="delete(cat)">削除</a>
+                        </div>
                     </div>
-                    <div class="siimple-table-cell">
-                        <a class="siimple-btn siimple-btn--error" (click)="delete(cat)">削除</a>
-                    </div>
-              </div>
+                </div>
             </div>
         </div>
     </div>
@@ -33,13 +35,13 @@
 
         <div class="siimple-content siimple-content--medium">
             <div class="siimple-form">
-                <div class="siimple-form-field">
+                <div class="siimple-form-field siimple-grid-col siimple-grid-col--5">
                     <label class="siimple-form-field-label" for="name">
                         ねこさんの名前
                     </label>
                     <input #catName id="name">
                 </div>
-                <div class="siimple-form-field">
+                <div class="siimple-form-field siimple-grid-col siimple-grid-col--7">
                     <button (click)="add(catName.value, '', '', '', '', '', ''); catName.value=''" class="siimple-btn siimple-btn--primary">追加</button>
                 </div>
             </div>

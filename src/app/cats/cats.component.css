@@ -1,0 +1,9 @@
+h2 {
+  margin-top: 0;
+}
+
+.cats-list {
+  max-height: 30vh;
+  -ms-overflow-y: auto;
+      overflow-y: auto;
+}
