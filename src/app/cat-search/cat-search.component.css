@@ -1,3 +1,12 @@
+.siimple-list {
+  max-height: 100px;
+  -ms-overflow-y: auto;
+      overflow-y: auto;
+  -ms-overflow-x: hidden;
+      overflow-x: hidden;
+  width: 320px;
+}
+
 .siimple-list-item {
   width: 300px;
 }
@@ -13,4 +22,8 @@
 
 #search-box {
   width: 300px;
+}
+
+h2 {
+  margin-top: 0;
 }
